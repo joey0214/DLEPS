@@ -12,6 +12,7 @@ from __future__ import division
 
 from os import path
 import requests
+import os
 
 import numpy as np
 import pandas as pd
@@ -53,7 +54,7 @@ class DLEPS(object):
         A3, self.con = self._get_con()
         self.full_con = A3.dot(self.W)
         
-        self.genes=pd.read_table("../../data/gene_info.txt",header=0)
+        self.genes=pd.read_table(os.path.dirname(os.path.abspath(__file__))+'/../../data/gene_info.txt",header=0)
         self.gene_dict=dict(list(zip(self.genes["pr_gene_symbol"], self.genes["pr_gene_id"])))
         
         if up_name:
@@ -72,7 +73,7 @@ class DLEPS(object):
 
     def _build_model(self):
         # Variational autoencoder weights
-        grammar_weights = '../../data/vae.hdf5'
+        grammar_weights = os.path.dirname(os.path.abspath(__file__))+'/../../data/vae.hdf5'
         grammar_model = molecule_vae.ZincGrammarModel(grammar_weights)
         self.grammar_model = grammar_model
         z_mn, z_var = grammar_model.vae.encoderMV.output
@@ -92,14 +93,14 @@ class DLEPS(object):
     
     # Map the 978 genes to 12328 genes
     def _get_W(self):
-        hf = h5py.File('../../data/denseweight.h5', 'r')
+        hf = h5py.File(os.path.dirname(os.path.abspath(__file__))+'/../../data/denseweight.h5', 'r')
         n1 = hf.get('W')
         W = np.array(n1)
         return W
     
     # The average expression levels for 978 genes
     def _get_con(self):
-        benchmark = pd.read_csv('../../data/benchmark.csv')
+        benchmark = pd.read_csv(os.path.dirname(os.path.abspath(__file__))+'/../../data/benchmark.csv')
         A3 = np.concatenate((np.array([1]),benchmark['1.0'].values),axis=0)
         con = benchmark['1.0'].values
         return A3, con
@@ -172,7 +173,7 @@ class DLEPS(object):
     def predict(self, smiles, average=True, save_onehot=None, load_onehot=None, save_expr = None):
         # Dense network weights
         if not self.loaded:
-            if path.exists('../../data/DLEPS_30000_tune_gvae10000.h5'):
+            if path.exists(os.path.dirname(os.path.abspath(__file__))+'/../../data/DLEPS_30000_tune_gvae10000.h5'):
                 self.model[0].load_weights('../../data/DLEPS_30000_tune_gvae10000.h5')
                 self.loaded = True
             
