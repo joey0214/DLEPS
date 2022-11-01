@@ -38,6 +38,7 @@ A sample command is as followed:
 Batch jobs were put into run_script
 
 Other options include:
+
     '--input', default=INPUTFILE,
                         'Brief format of chemicals: contains SMILES column. '
     '--use_onehot',  default=True,
