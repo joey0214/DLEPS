@@ -70,3 +70,9 @@ model_zinc.py (line 3 and 122) and model_zinc_str.py (line 3 and 96) are updated
 the DLEPS authors refered `vae.hdf5` as https://github.com/mkusner/grammarVAE/blob/master/pretrained/zinc_vae_grammar_L56_E100_val.hdf5, see [here](https://github.com/kekegg/DLEPS/issues/1#issuecomment-869421988)
 
 
+## file path
+
+to be able run the DLEPS via `python ~/DLEPS/code/DLEPS/driv_DLEPS.py`,  `/../../data/vae.hdf5` is changed to `os.path.dirname(os.path.abspath(__file__))+'/../../data/vae.hdf5'`  
+
+
+
