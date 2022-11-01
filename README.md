@@ -7,6 +7,7 @@ A Deep Learning based Efficacy Prediction System for Drug Discovery
 
 This package requires the **rdkit**, **tensorflow >=1.15.0** and **Keras >=2.3.0**.
 
+```
 conda install -c rdkit rdkit
 apt-get update
 apt install libxrender1
@@ -14,6 +15,7 @@ apt install libxext6
 pip install nltk
 pip install tensorflow==1.15.0
 pip install keras==2.3.0
+```
 
 - ## On Code ocean
 
@@ -31,7 +33,7 @@ input files
 Conversion of gene names can be accomplished at https://biit.cs.ut.ee/gprofiler/convert
 
 A sample command is as followed:
-python driv_DLEPS.py --input=../../data/Brief_Targetmol_natural_product_2719 --output=../../results/np2719_Browning.csv --upset=../../data/BROWNING_up --downset=../../data/BROWNING_down --reverse=False
+```python driv_DLEPS.py --input=../../data/Brief_Targetmol_natural_product_2719 --output=../../results/np2719_Browning.csv --upset=../../data/BROWNING_up --downset=../../data/BROWNING_down --reverse=False```
 
 Batch jobs were put into run_script
 
