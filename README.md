@@ -56,3 +56,12 @@ Other options include:
 
 Jupyter notebook users may run DLEPS_tutorial.ipynb for better iterative computing and analysis.
 
+
+# personal patch 
+
+## keras version
+
+currently, i'm using python/3.9.5; tensorflow/2.8.0; keras/2.8.0, via `module load python_ML_packages/3.9.5-gpu`. 
+therefore, in my case, "objectives" has changed name to "losses" in later Keras versions. lines in
+model_zinc.py (line 3 and 122) and model_zinc_str.py (line 3 and 96) are updated from *objectives* to *losses*
+
