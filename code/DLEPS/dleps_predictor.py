@@ -54,7 +54,7 @@ class DLEPS(object):
         A3, self.con = self._get_con()
         self.full_con = A3.dot(self.W)
         
-        self.genes=pd.read_table(os.path.dirname(os.path.abspath(__file__))+'/../../data/gene_info.txt",header=0)
+        self.genes=pd.read_table(os.path.dirname(os.path.abspath(__file__))+"/../../data/gene_info.txt",header=0)
         self.gene_dict=dict(list(zip(self.genes["pr_gene_symbol"], self.genes["pr_gene_id"])))
         
         if up_name:
@@ -174,7 +174,7 @@ class DLEPS(object):
         # Dense network weights
         if not self.loaded:
             if path.exists(os.path.dirname(os.path.abspath(__file__))+'/../../data/DLEPS_30000_tune_gvae10000.h5'):
-                self.model[0].load_weights('../../data/DLEPS_30000_tune_gvae10000.h5')
+                self.model[0].load_weights(os.path.dirname(os.path.abspath(__file__))+'/../../data/DLEPS_30000_tune_gvae10000.h5')
                 self.loaded = True
             
         score = []
