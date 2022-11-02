@@ -71,6 +71,8 @@ model_zinc.py (line 3 and 122) and model_zinc_str.py (line 3 and 96) are updated
 
 - `benchmark.csv` and `gene_info.txt`are recovered from https://github.com/kekegg/DLEPS/commit/b82b3be123958a24199daacfffe9921f0bcb1e6e
 
+- `denseweight.h5` following this comment https://github.com/kekegg/DLEPS/issues/6#issuecomment-915908677 
+
 ## file path
 
 to be able run the DLEPS via `python ~/DLEPS/code/DLEPS/driv_DLEPS.py`,  `/../../data/vae.hdf5` is changed to `os.path.dirname(os.path.abspath(__file__))+'/../../data/vae.hdf5'`  
