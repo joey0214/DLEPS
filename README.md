@@ -67,8 +67,9 @@ model_zinc.py (line 3 and 122) and model_zinc_str.py (line 3 and 96) are updated
 
 ## missing data in `../../data/`
 
-the DLEPS authors refered `vae.hdf5` as https://github.com/mkusner/grammarVAE/blob/master/pretrained/zinc_vae_grammar_L56_E100_val.hdf5, see [here](https://github.com/kekegg/DLEPS/issues/1#issuecomment-869421988)
+- the DLEPS authors refered `vae.hdf5` as https://github.com/mkusner/grammarVAE/blob/master/pretrained/zinc_vae_grammar_L56_E100_val.hdf5, see [here](https://github.com/kekegg/DLEPS/issues/1#issuecomment-869421988)
 
+- `benchmark.csv` and `gene_info.txt`are recovered from https://github.com/kekegg/DLEPS/commit/b82b3be123958a24199daacfffe9921f0bcb1e6e
 
 ## file path
 
