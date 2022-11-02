@@ -57,7 +57,7 @@ Other options include:
 Jupyter notebook users may run DLEPS_tutorial.ipynb for better iterative computing and analysis.
 
 
-# personal patch 
+# <span style="color:red"> personal patch </span>.
 
 ## keras version
 
