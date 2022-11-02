@@ -73,12 +73,15 @@ model_zinc.py (line 3 and 122) and model_zinc_str.py (line 3 and 96) are updated
 
 - `denseweight.h5` following this comment https://github.com/kekegg/DLEPS/issues/6#issuecomment-915908677 
 
-```
-BiocManager::install("signatureSearch")
-library(signatureSearch)
-gctx2h5(gctx="GSE92743_Broad_OLS_WEIGHTS_n979x11350.gctx", cid=1:979,  h5file="denseweight.h5")
+    ```
+    BiocManager::install("signatureSearch")
+    library(signatureSearch)
+    gctx2h5(gctx="GSE92743_Broad_OLS_WEIGHTS_n979x11350.gctx", cid=1:979,  h5file="denseweight.h5")
 
-```
+    ```
+    
+    but this approach has an error: `TypeError: unsupported operand type(s) for *: 'float' and 'NoneType'`, from line 55 in `dleps_predictor.py` ; self.full_con = A3.dot(self.W)
+
 
 
 ## file path
