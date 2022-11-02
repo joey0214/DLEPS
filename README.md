@@ -71,7 +71,12 @@ model_zinc.py (line 3 and 122) and model_zinc_str.py (line 3 and 96) are updated
 
 - `benchmark.csv` and `gene_info.txt`are recovered from https://github.com/kekegg/DLEPS/commit/b82b3be123958a24199daacfffe9921f0bcb1e6e
 
-- `denseweight.h5` following this comment https://github.com/kekegg/DLEPS/issues/6#issuecomment-915908677 
+- `denseweight.h5` following this comment https://github.com/kekegg/DLEPS/issues/6#issuecomment-915908677 ```BiocManager::install("signatureSearch")
+library(signatureSearch)
+gctx2h5(gctx="GSE92743_Broad_OLS_WEIGHTS_n979x11350.gctx", cid=1:979,  h5file="denseweight.h5")
+
+```
+
 
 ## file path
 
